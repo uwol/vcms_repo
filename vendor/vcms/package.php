@@ -80,13 +80,6 @@ function createManifestJson($vcmsDirectory){
 	fclose($handle);
 }
 
-function createRootHtaccess(){
-	$filename = '.htaccess';
-	$handle = fopen($filename, 'w');
-	fwrite($handle, 'AddType application/x-httpd-php .json');
-	fclose($handle);
-}
-
 function createVendorHtaccess(){
 	$filename = 'vendor/.htaccess';
 	$handle = fopen($filename, 'w');

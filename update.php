@@ -106,6 +106,5 @@ echo 'deleting directory temp<br />';
 deleteDirectory($tempDir);
 
 echo 'htaccess<br />';
-createRootHtaccess();
 createVendorHtaccess();
 ?>
