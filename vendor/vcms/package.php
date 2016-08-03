@@ -27,15 +27,13 @@ function createEnginePackage($srcDirectory, $tempDir, $packagesDir){
 	// @Deprecated
 	mkdir($tempEngineDir. '/lib');
 
-	copyFolder($srcDirectory. '/styles', $tempEngineDir. '/styles');
 	copyFolder($srcDirectory. '/vendor', $tempEngineDir. '/vendor');
 
 	$currentdir = getcwd();
 	chdir($tempDir);
 
 	$tar = new Archive_Tar('../' .$packagesDir. '/engine.tar');
-	$array = array('engine/inc.php', 'engine/index.php', 'engine/lib/',
-		'engine/styles/', 'engine/vendor/');
+	$array = array('engine/inc.php', 'engine/index.php', 'engine/lib/', 'engine/vendor/');
 	$tar->create($array);
 
 	chdir($currentdir);
