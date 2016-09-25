@@ -21,10 +21,11 @@ function createEnginePackage($srcDirectory, $tempDir, $packagesDir){
 
 	mkdir($tempEngineDir);
 
-	copy($srcDirectory. '/inc.php', $tempEngineDir. '/inc.php');
+	copy($srcDirectory. '/api.php', $tempEngineDir. '/api.php');
 	copy($srcDirectory. '/index.php', $tempEngineDir. '/index.php');
 
 	// @Deprecated
+	touch($tempEngineDir. '/inc.php');
 	mkdir($tempEngineDir. '/lib');
 
 	copyFolder($srcDirectory. '/vendor', $tempEngineDir. '/vendor');
@@ -33,7 +34,7 @@ function createEnginePackage($srcDirectory, $tempDir, $packagesDir){
 	chdir($tempDir);
 
 	$tar = new Archive_Tar('../' .$packagesDir. '/engine.tar');
-	$array = array('engine/inc.php', 'engine/index.php', 'engine/lib/', 'engine/vendor/');
+	$array = array('engine/api.php', 'engine/inc.php', 'engine/index.php', 'engine/lib/', 'engine/vendor/');
 	$tar->create($array);
 
 	chdir($currentdir);
