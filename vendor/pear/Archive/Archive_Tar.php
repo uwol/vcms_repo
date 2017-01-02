@@ -39,16 +39,13 @@
  * @link      http://pear.php.net/package/Archive_Tar
  */
 
-//start of modifications for VCMS
-//require_once 'PEAR.php';
+namespace pear\Archive;
 
 class PEAR{
 	function PEAR(){}
 	function _PEAR(){}
+	function raiseError($message){ echo $message; }
 }
-//end of modifications for VCMS
-
-
 
 define('ARCHIVE_TAR_ATT_SEPARATOR', 90001);
 define('ARCHIVE_TAR_END_BLOCK', pack("a512", ''));
@@ -119,7 +116,7 @@ class Archive_Tar extends PEAR
     *
     * @access public
     */
-    function Archive_Tar($p_tarname, $p_compress = null)
+    function __construct($p_tarname, $p_compress = null)
     {
         $this->PEAR();
         $this->_compress = false;

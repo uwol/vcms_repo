@@ -26,7 +26,7 @@ $vcmsUnzippedPath = $tempDir. '/' .$dirInZip;
 
 
 require_once('vendor/vcms/package.php');
-require_once('vendor/pear/Archive/Tar.php');
+require_once('vendor/pear/autoload.php');
 
 
 // clean up ----------------------------------------------
@@ -107,4 +107,3 @@ deleteDirectory($tempDir);
 
 echo 'htaccess<br />';
 createVendorHtaccess();
-?>

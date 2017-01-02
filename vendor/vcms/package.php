@@ -33,7 +33,7 @@ function createEnginePackage($srcDirectory, $tempDir, $packagesDir){
 	$currentdir = getcwd();
 	chdir($tempDir);
 
-	$tar = new Archive_Tar('../' .$packagesDir. '/engine.tar');
+	$tar = new \pear\Archive\Archive_Tar('../' .$packagesDir. '/engine.tar');
 	$array = array('engine/api.php', 'engine/inc.php', 'engine/index.php', 'engine/lib/', 'engine/vendor/');
 	$tar->create($array);
 
@@ -47,7 +47,7 @@ function createEnginePackage($srcDirectory, $tempDir, $packagesDir){
 function createModulePackage($modulesDirectory, $moduleName, $packagesDir){
 	$currentdir = getcwd();
 	chdir($modulesDirectory);
-	$tar = new Archive_Tar('../../../' .$packagesDir. '/' .$moduleName. '.tar');
+	$tar = new \pear\Archive\Archive_Tar('../../../' .$packagesDir. '/' .$moduleName. '.tar');
 	$tar->create($moduleName);
 	chdir($currentdir);
 }
@@ -147,4 +147,3 @@ function getModuleVersion($vcmsDir, $moduleName){
 		}
 	}
 }
-?>
