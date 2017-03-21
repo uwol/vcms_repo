@@ -5,8 +5,4 @@
 ehthumbs.db
 Thumbs.db
 
-htaccess
-log.php
-manifest.php
-manifestJson.php
 vendor/phpmailer/
