@@ -19,7 +19,7 @@ along with VCMS. If not, see <http://www.gnu.org/licenses/>.
 $gitHubURL = 'https://github.com/uwol/vcms/archive/main.zip';
 $dirInZip = 'vcms-main';
 
-$tempDir = 'temp';
+$tempDir = './temp';
 $packagesDir = 'packages';
 $vcmsZipPath = $tempDir. '/verbindungscms.zip';
 $vcmsUnzippedPath = $tempDir. '/' .$dirInZip;
